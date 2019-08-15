@@ -9,6 +9,7 @@ Please note, I added experimental vibrancy support to the sidebar.  I also added
 ![Theme Screenshot](./screenshots/screenshot1.png)
 
 **Custom code folding icons:**
+
 ![Theme Screenshot](./screenshots/screenshot2.gif)
 
 
