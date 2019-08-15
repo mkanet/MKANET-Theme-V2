@@ -4,6 +4,7 @@
   "description": "Color theme designed from scratch to reduce eye strain",
   "version": "0.0.4",
   "publisher": "MKANET",
+  "preview": true,
   "icon": "icon.png",
   "repository": {
     "type": "git",
