@@ -1,3 +1,4 @@
 # Changes
 
-* 0.0.5 - First public release
+* 0.0.6 - First public release
+
