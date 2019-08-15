@@ -1,0 +1,106 @@
+{
+  "name": "mkanet-theme",
+  "displayName": "MKANET Theme V2",
+  "description": "Color theme designed from scratch to reduce eye strain",
+  "version": "0.0.3",
+  "publisher": "MKANET",
+  "icon": "icon.png",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/mkanet/MKANET-Theme"
+  },
+  "engines": {
+      "vscode": "^1.37.0"
+  },
+  "categories": [
+      "Themes"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./src/extension",
+  "contributes": {
+    "themes": [
+      {
+          "label": "MKANET V2",
+          "uiTheme": "vs-dark",
+          "path": "./themes/MKANET-color-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.installVibrancy",
+        "title": "%extension.installVibrancy.title%"
+      },
+      {
+        "command": "extension.uninstallVibrancy",
+        "title": "%extension.uninstallVibrancy.title%"
+      },
+      {
+        "command": "extension.updateVibrancy",
+        "title": "%extension.updateVibrancy.title%"
+      }
+    ],
+    "configuration": {
+      "title": "Vibrancy Effect",
+      "properties": {
+        "vscode_vibrancy.type": {
+          "description": "%configuration.type.description%",
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "dwm",
+            "acrylic",
+            "appearance-based",
+            "light",
+            "dark",
+            "titlebar",
+            "selection",
+            "menu",
+            "popover",
+            "sidebar",
+            "medium-light",
+            "ultra-dark"
+          ],
+          "enumDescriptions": [
+            "%configuration.type.auto.description%",
+            "%configuration.type.dwm.description%",
+            "%configuration.type.acrylic.description%",
+            "%configuration.type.appearance-based.description%",
+            "%configuration.type.light.description%",
+            "%configuration.type.dark.description%",
+            "%configuration.type.titlebar.description%",
+            "%configuration.type.selection.description%",
+            "%configuration.type.menu.description%",
+            "%configuration.type.popover.description%",
+            "%configuration.type.sidebar.description%",
+            "%configuration.type.medium-light.description%",
+            "%configuration.type.ultra-dark.description%"
+          ]
+        },
+        "vscode_vibrancy.opacity": {
+          "description": "%configuration.opacity.description%",
+          "type": "number",
+          "default": "-1"
+        },
+        "vscode_vibrancy.theme": {
+          "description": "%configuration.theme.description%",
+          "type": "string",
+          "default": "Dark (Only Subbar)"
+        },
+        "vscode_vibrancy.imports": {
+          "description": "%configuration.imports.description%",
+          "type": "array",
+          "default": [
+            "$theme-style$"
+          ]
+        }
+      }
+    }
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "mz": "^2.7.0"
+  }
+}

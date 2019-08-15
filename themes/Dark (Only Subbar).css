@@ -1,0 +1,20 @@
+.monaco-workbench,
+.monaco-workbench .sidebar,
+.monaco-workbench .activitybar,
+.monaco-workbench .titlebar,
+body {
+  background: transparent !important;
+}
+.monaco-editor.vs-dark .margin-view-overlays .folding,
+body {
+background-image: url(../themes/images/arrow_down.png);
+}
+.monaco-editor.vs-dark .margin-view-overlays .folding.collapsed,
+body {
+background-image: url(../themes/images/arrow_right.png);
+}
+
+.monaco-editor .inline-folded,
+body {
+background-image: url(../themes/images/fold.png);
+}
