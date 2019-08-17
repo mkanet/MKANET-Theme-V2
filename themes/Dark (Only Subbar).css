@@ -13,8 +13,13 @@ background-image: url(../themes/images/arrow_down.png);
 body {
 background-image: url(../themes/images/arrow_right.png);
 }
-
 .monaco-editor .inline-folded,
 body {
 background-image: url(../themes/images/fold.png);
+}
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label {
+  background-image: url(../themes/images/grey_x@2x.png);
+}
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-close .action-label {
+  background-image: url(../themes/images/dirty_circle.png);
 }
