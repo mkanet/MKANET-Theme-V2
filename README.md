@@ -28,4 +28,4 @@ Below, are the bonus features included with this theme:
 
 **Designer:** Michael K. Avanessian
 
-***Special Thanks:** "eyhn" from https://github.com/EYHN/vscode-vibrancy (for Vibrancy and custom CSS support)*
+***Special Thanks:** "eyhn" from https://github.com/EYHN/vscode-vibrancy (for Vibrancy and custom CSS support)
