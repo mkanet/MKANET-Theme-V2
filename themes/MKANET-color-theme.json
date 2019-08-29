@@ -397,7 +397,7 @@
         "editorLineNumber.activeForeground": "#BAEEFF",
 		"editor.lineHighlightBackground": "#B7B7B7",
 		"dropdown.foreground": "#C1C1C1",
-        "dropdown.background": "#3C3C3C",
+        "dropdown.background": "#2D2D2D",
         "dropdown.border": "#000000",
         "panel.background": "#000000",
         "panel.border": "#5765E5",

@@ -1,5 +1,7 @@
 # Changes
 
+* 0.1.2 - Added Panel vibrancy
+* 0.1.1 - Reverted back to previous Function parameter color
 * 0.1.1 - Reverted back to previous Function parameter color
 * 0.1.0 - Modified Function parameter syntax highlighting color
 * 0.0.9 - Recreated tab close icon with a better one
