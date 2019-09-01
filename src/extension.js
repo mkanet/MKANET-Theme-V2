@@ -26,14 +26,16 @@ if (/^win/.test(process.platform)) {
 }
 
 var themeStylePaths = {
-	'Dark (Only Subbar)': '../themes/Dark (Only Subbar).css',
+	'Dark': '../themes/Dark.css',
+	'Lighter': '../themes/Lighter.css',
 }
 
 const themeConfigPaths = {
-	'Dark (Only Subbar)': '../themes/Dark (Only Subbar).json',
+	'Dark': '../themes/Dark.json',
+	'Lighter': '../themes/Lighter.json',
 }
 
-var defaultTheme = 'Dark (Only Subbar)';
+var defaultTheme = 'Dark';
 
 function getCurrentTheme(config) {
 	return config.theme in themeStylePaths ? config.theme : defaultTheme;

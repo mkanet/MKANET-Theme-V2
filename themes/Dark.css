@@ -1,0 +1,44 @@
+.monaco-workbench, .monaco-workbench .sidebar, .monaco-workbench .activitybar, .monaco-workbench .titlebar, body {
+  background: transparent !important;
+}
+
+.monaco-editor.vs-dark .margin-view-overlays .folding, body {
+  background-image: url(../themes/images/arrow_down.png);
+}
+
+.monaco-editor.vs-dark .margin-view-overlays .folding.collapsed, body {
+  background-image: url(../themes/images/arrow_right.png);
+}
+
+.monaco-editor .inline-folded, body {
+  background-image: url(../themes/images/fold.png);
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label {
+  background-image: url(../themes/images/tab-close.png);
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-close .action-label {
+  background-image: url(../themes/images/dirty_circle.png);
+}
+
+.vs-dark .explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .close-editor-action {
+  background-image: url(../themes/images/dirty_circle.png);
+}
+
+.monaco-workbench .part>.content, .monaco-workbench .editor>.content>.one-editor-silo.editor-one, .monaco-workbench .part>.title, .monaco-workbench, .monaco-workbench .part, body {
+  background: transparent !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.terminal-outer-container, .xterm-viewport, .xterm-rows, .monaco-workbench .part.panel>.content .monaco-editor, .monaco-workbench .part.panel>.content .monaco-editor .margin, .monaco-workbench .part.panel>.content .monaco-editor .monaco-editor-background {
+  background-color: transparent !important;
+}
+
+.monaco-workbench .activitybar, .monaco-workbench .part.sidebar {
+  background-color: rgba(45, 45, 45, 0.2) !important;
+}
+
+.monaco-workbench .part.statusbar>.left-items, .monaco-workbench .part.statusbar>.right-items {
+  background-color: rgba(52, 52, 52, 0.2) !important;
+}

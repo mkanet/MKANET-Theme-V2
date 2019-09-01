@@ -24,7 +24,7 @@
     "themes": [
       {
         "label": "MKANET V2",
-        "uiTheme": "vs-dark",
+        "uiTheme": "vs",
         "path": "./themes/MKANET-color-theme.json"
       }
     ],
@@ -85,11 +85,15 @@
           "type": "number",
           "default": "-1"
         },
-        "vscode_vibrancy.theme": {
-          "description": "%configuration.theme.description%",
-          "type": "string",
-          "default": "Dark (Only Subbar)"
-        },
+				"vscode_vibrancy.theme": {
+					"description": "%configuration.theme.description%",
+					"type": "string",
+					"default": "Dark",
+					"enum": [
+						"Dark",
+						"Lighter"
+					]
+				},
         "vscode_vibrancy.imports": {
           "description": "%configuration.imports.description%",
           "type": "array",

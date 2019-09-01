@@ -26,17 +26,16 @@
   background-image: url(../themes/images/dirty_circle.png);
 }
 
-.monaco-workbench .part>.content, .monaco-workbench .editor>.content>.one-editor-silo.editor-one, .monaco-workbench .part>.title, .monaco-workbench, .monaco-workbench .part, body {
-  background: transparent !important;
-  background-color: rgba(0, 0, 0, 0.2) !important;
+.monaco-workbench .part {
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .terminal-outer-container, .xterm-viewport, .xterm-rows, .monaco-workbench .part.panel>.content .monaco-editor, .monaco-workbench .part.panel>.content .monaco-editor .margin, .monaco-workbench .part.panel>.content .monaco-editor .monaco-editor-background {
   background-color: transparent !important;
 }
 
-.monaco-workbench .activitybar, .monaco-workbench .part.sidebar {
-  background-color: rgba(32, 32, 32, 0.2) !important;
+.monaco-workbench .sidebar, .monaco-workbench .activitybar {
+  background-color: transparent !important;
 }
 
 .monaco-workbench .part.statusbar>.left-items, .monaco-workbench .part.statusbar>.right-items {
