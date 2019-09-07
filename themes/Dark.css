@@ -12,6 +12,7 @@
 
 .monaco-editor .inline-folded, body {
   background-image: url(../themes/images/fold.png);
+  background-size: cover;
 }
 
 .monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label {

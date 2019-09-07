@@ -402,7 +402,7 @@
         "panel.background": "#000000",
         "panel.border": "#5765E5",
         "panelTitle.activeForeground": "#5765E5",
-        "terminalCursor.foreground": "#c1c1c1",
+        "terminalCursor.foreground": "#c23621",
         "terminal.selectionBackground": "#a5c8ff44",
         "terminal.border": "#31008b",
         "terminal.background": "#000000",
