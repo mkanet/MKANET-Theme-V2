@@ -1,5 +1,6 @@
 # Changes
 
+* 0.1.4 - Updated to latest Vibrancy release.  Fixed code-folding icon bug.
 * 0.1.4 - Fixed bug in previous update
 * 0.1.3 - Added "Lighter" vibrancy theme
 * 0.1.2 - Added Panel vibrancy
