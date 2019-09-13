@@ -43,3 +43,7 @@
 .monaco-workbench .part.statusbar>.left-items, .monaco-workbench .part.statusbar>.right-items {
   background-color: rgba(53, 53, 53, 0.2) !important;
 }
+
+.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .edit-preferences-widget {
+  background-image: url(../themes/images/pencil-icon.png);
+}

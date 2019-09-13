@@ -104,7 +104,7 @@
 				"string source"
 			],
 			"settings": {
-				"foreground": "#9D9CBF"
+				"foreground": "#9595BC"
 			}
 		},
 		{
@@ -295,7 +295,7 @@
 		{
 			"scope": "variable.other.member.powershell",
 			"settings": {
-				"foreground": "#1C6D93"
+				"foreground": "#217196"
 			}
 		},
 		{
