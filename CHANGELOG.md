@@ -1,5 +1,6 @@
 # Changes
 
+* 0.1.6 - Added settings pencil icon.  Updated a couple of syntax highlighting colors
 * 0.1.5 - Updated to latest Vibrancy release.  Fixed code-folding icon bug.
 * 0.1.4 - Fixed bug in previous update
 * 0.1.3 - Added "Lighter" vibrancy theme
