@@ -2,39 +2,98 @@
   background: transparent !important;
 }
 
-.monaco-editor.vs-dark .margin-view-overlays .folding, body {
+ 
+.monaco-editor.vs-dark .margin-view-overlays .codicon-chevron-down:before {
+  content: "";
+}
+.monaco-editor.vs-dark .margin-view-overlays .codicon-chevron-down {
   background-image: url(../themes/images/arrow_down.png);
-}
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 88%;
+  height: 88%;
+} 
 
-.monaco-editor.vs-dark .margin-view-overlays .folding.collapsed, body {
-  background-image: url(../themes/images/arrow_right.png);
+
+.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-chevron-right:before {
+  content: "";
 }
+.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-chevron-right {
+  background-image: url(../themes/images/arrow_right.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 88%;
+  height: 88%;
+}      
+
 
 .monaco-editor .inline-folded, body {
   background-image: url(../themes/images/fold.png);
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label {
-  background-image: url(../themes/images/tab-close.png);
-}
 
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label.codicon.codicon-close:before {
+  content: "";
+}    
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label.codicon.codicon-close {
+   background-image: url(../themes/images/tab-close.png);
+   background-size: contain;
+}
+ 
+
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-close .action-label:not(:hover):before {
+  content: "";
+}
 .monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-close .action-label {
   background-image: url(../themes/images/dirty_circle.png);
-}
+  background-size: contain;
+} 
 
-.vs-dark .explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .close-editor-action {
-  background-image: url(../themes/images/dirty_circle.png);
-}
 
+.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .codicon-close:before {
+  content: "";
+}
+.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .codicon-close {
+  background-image: url(../themes/images/dirty_circle_small.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 8px;       
+  height: 8px; 
+}         
+                                                                       
+       
+.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row>.monaco-action-bar .codicon-close:before {
+  content: "";
+}
+.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row>.monaco-action-bar .codicon-close {
+  background-image: url(../themes/images/tab-close-small.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 8px;       
+  height: 8px;                    
+}          
+
+                                
+                                       
+.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-edit:before {
+  content: "";
+}
+.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-edit {
+  background-image: url(../themes/images/pencil-icon.png);
+  background-size: contain;
+}       
+                         
+                                
 .monaco-workbench .part>.content, .monaco-workbench .editor>.content>.one-editor-silo.editor-one, .monaco-workbench .part>.title, .monaco-workbench, .monaco-workbench .part, body {
   background: transparent !important;
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
-
+    
 .terminal-outer-container, .xterm-viewport, .xterm-rows, .monaco-workbench .part.panel>.content .monaco-editor, .monaco-workbench .part.panel>.content .monaco-editor .margin, .monaco-workbench .part.panel>.content .monaco-editor .monaco-editor-background {
   background-color: transparent !important;
-}
+}            
 
 .monaco-workbench .activitybar, .monaco-workbench .part.sidebar {
   background-color: rgba(45, 45, 45, 0.2) !important;
@@ -43,7 +102,4 @@
 .monaco-workbench .part.statusbar>.left-items, .monaco-workbench .part.statusbar>.right-items {
   background-color: rgba(53, 53, 53, 0.2) !important;
 }
-
-.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .edit-preferences-widget {
-  background-image: url(../themes/images/pencil-icon.png);
-}
+        
