@@ -1,5 +1,6 @@
 # Changes
 
+* 0.1.8 - Adjusted site for folding icon.
 * 0.1.7 - Changes to custom icons for compatibility with VSCode ver. 1.39.1 and higher.
 * 0.1.6 - Added settings pencil icon.  Updated a couple of syntax highlighting colors.
 * 0.1.5 - Updated to latest Vibrancy release.  Fixed code-folding icon bug.
