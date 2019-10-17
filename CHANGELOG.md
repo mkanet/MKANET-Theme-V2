@@ -1,5 +1,6 @@
 # Changes
 
+* 0.2.0 - More minor adjustments
 * 0.1.9 - Minor custom icon size adjustments
 * 0.1.8 - Adjusted site for folding icon
 * 0.1.7 - Changes to custom icons for compatibility with VSCode ver. 1.39.1 and higher
