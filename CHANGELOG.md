@@ -1,5 +1,6 @@
 # Changes
 
+* 0.2.1 - Changed spacing for tab close icons
 * 0.2.0 - More minor adjustments
 * 0.1.9 - Minor custom icon size adjustments
 * 0.1.8 - Adjusted site for folding icon
