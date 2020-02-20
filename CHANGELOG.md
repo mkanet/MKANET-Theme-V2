@@ -1,5 +1,6 @@
 # Changes
 
+* 0.2.3 - Adjusted "tab-close" position
 * 0.2.2 - Resized "tab-close" icons to match "dirty circle"
 * 0.2.1 - Changed spacing for tab close icons
 * 0.2.0 - More minor adjustments
