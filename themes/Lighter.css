@@ -3,10 +3,10 @@
 }
 
  
-.monaco-editor.vs-dark .margin-view-overlays .codicon-chevron-down:before {
+.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-folding-expanded:before {
   content: "";
 }
-.monaco-editor.vs-dark .margin-view-overlays .codicon-chevron-down {
+.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-folding-expanded {
   background-image: url(../themes/images/arrow_down.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -15,10 +15,10 @@
 } 
 
 
-.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-chevron-right:before {
+.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-folding-collapsed:before {
   content: "";
 }
-.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-chevron-right {
+.monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-folding-collapsed {
   background-image: url(../themes/images/arrow_right.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -84,10 +84,10 @@
 
                                 
                                        
-.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-edit:before {
+.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-preferences-edit::before {
   content: "";
 }
-.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-edit {
+.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-preferences-edit {
   background-image: url(../themes/images/pencil-icon.png);
   background-size: contain;
 }

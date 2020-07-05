@@ -60,6 +60,12 @@
 			}
 		},
 		{
+			"scope": "entity.name.tag ",
+			"settings": {
+				"foreground": "#004B89"
+			}
+		},
+		{
 			"name": "Number",
 			"scope": "constant.numeric",
 			"settings": {
