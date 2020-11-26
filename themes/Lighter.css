@@ -2,7 +2,7 @@
   background: transparent !important;
 }
 
- 
+
 .monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-folding-expanded:before {
   content: "";
 }
@@ -12,7 +12,7 @@
   background-size: contain;
   width: 77%;
   height: 77%;
-} 
+}
 
 
 .monaco-editor.vs-dark .margin-view-overlays .cldr.codicon.codicon-folding-collapsed:before {
@@ -24,7 +24,7 @@
   background-size: contain;
   width: 77%;
   height: 77%;
-}      
+}
 
 
 .monaco-editor .inline-folded, body {
@@ -34,10 +34,10 @@
 }
 
 
-.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label.codicon.codicon-close:before {
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab>.tab-actions .action-label.codicon:before {
   content: "";
-}    
-.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-close .action-label.codicon.codicon-close {
+}
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab>.tab-actions .action-label.codicon {
    background-image: url(../themes/images/tab-close.png);
    background-size: contain;
    position: relative;
@@ -45,18 +45,55 @@
    width: 16px;
    height: 16px;
 }
- 
 
-.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-close .action-label:not(:hover):before {
+ 
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .action-label.codicon:before {
   content: "";
 }
-.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-close .action-label {
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .action-label.codicon {
+   background-image: url(../themes/images/tab-close.png);
+   background-size: contain;
+   position: relative;
+   left: 3px;
+   width: 16px;
+   height: 16px;
+}
+
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab>.tab-actions .action-label {
+    opacity: 100;
+    display: block;
+    height: 16px;
+    width: 16px;
+    background-size: 16px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    margin-right: .5em;
+}
+
+
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-actions .action-label:not(:hover):before {
+  content: "";
+}
+.monaco-workbench .part.editor>.content .editor-group-container.active>.title .tabs-container>.tab.dirty>.tab-actions .action-label {
   background-image: url(../themes/images/dirty_circle.png);
   background-size: contain;
   position: relative;
   top: .5px;
   left: 3px;
 } 
+
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.dirty>.tab-actions .action-label:not(:hover):before {
+  content: "";
+}
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.dirty>.tab-actions .action-label {
+  background-image: url(../themes/images/dirty_circle.png);
+  background-size: contain;
+  position: relative;
+  top: .5px;
+  left: 3px;
+}
 
 
 .explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .codicon-close:before {
@@ -66,11 +103,11 @@
   background-image: url(../themes/images/dirty_circle_small.png);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 8px;       
-  height: 8px; 
-}         
-                                                                       
-       
+  width: 8px;      
+  height: 8px;
+}
+
+
 .explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row>.monaco-action-bar .codicon-close:before {
   content: "";
 }
@@ -80,10 +117,9 @@
   background-size: contain;
   width: 8px;       
   height: 8px;                    
-}          
+}
 
-                                
-                                       
+
 .monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-preferences-edit::before {
   content: "";
 }
