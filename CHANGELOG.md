@@ -1,5 +1,6 @@
 # Changes
 
+* 0.2.8 - Fixed sidebar "dirty circle" + "close" icons; as well as pencil icon
 * 0.2.7 - Fixed tab icons for compatibilty with VSCode ver. 1.51.1 and higher
 * 0.2.6 - Fixed sidebar transparency
 * 0.2.5 - Fixed code folding/collapsing icons.  Fixed settings pencil icon

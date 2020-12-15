@@ -96,34 +96,33 @@
 }
 
 
-.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .codicon-close:before {
+.open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .codicon-close:before {
   content: "";
 }
-.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .codicon-close {
+.open-editors .monaco-list .monaco-list-row.dirty:not(:hover)>.monaco-action-bar .codicon-close {
   background-image: url(../themes/images/dirty_circle_small.png);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 8px;      
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 
-.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row>.monaco-action-bar .codicon-close:before {
+.open-editors .monaco-list .monaco-list-row>.monaco-action-bar .codicon-close:before {
   content: "";
 }
-.explorer-viewlet .explorer-open-editors .monaco-list .monaco-list-row>.monaco-action-bar .codicon-close {
+.open-editors .monaco-list .monaco-list-row>.monaco-action-bar .codicon-close {
   background-image: url(../themes/images/tab-close-small.png);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 8px;       
-  height: 8px;                    
+  width: 10px;
+  height: 10px;
 }
 
-
-.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-preferences-edit::before {
+.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .codicon-settings-edit:before  {
   content: "";
 }
-.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .cgmr.codicon.codicon-preferences-edit {
+.monaco-editor.hc-black .edit-preferences-widget, .monaco-editor.vs-dark .codicon-settings-edit  {
   background-image: url(../themes/images/pencil-icon.png);
   background-size: contain;
 }

@@ -376,7 +376,7 @@
 		"input.placeholderForeground": "#7C828C",
 		"quickInput.background": "#101010e0",
         "descriptionForeground": "#3e5263",
-        "foreground": "#535353",
+		"foreground": "#6a6a6a",
 		"editorGroup.border": "#444444",
 		"editorGroup.dropBackground": "#53595d54",
         "editorBracketMatch.border": "#93B5BF",
