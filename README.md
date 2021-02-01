@@ -7,25 +7,48 @@ Below, are the bonus features included with this theme:
 <br/>
 
 
-
 ## **Vibrancy sidebar:**
  
-![Theme Screenshot](./screenshots/screenshot1.png)
+![Theme Screenshot](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/screenshot1.png)
 <br/>
 <br/>
+
 
 ## **Custom code folding icons:** 
 
-![Theme Screenshot](./screenshots/screenshot2.gif)
+![Theme Screenshot](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/screenshot2.gif)
 <br/>
 <br/>
+
 
 ## **Custom tab close icons:**
 
-![Theme Screenshot](./screenshots/screenshot3.gif)
+![Theme Screenshot](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/screenshot3.gif)
+<br/>
+<br/>
+
+
+## **Supported Operating Systems:**
+
+Windows 10 ✔
+
+MacOS ✔
+<br/>
+<br/>
+
+
+## **Available Vibrancy themes:**
+
+* **Dark** &nbsp;*(default)*
+* **Lighter**
+
+|        Dark      |    Lighter   |
+|:------------------------:|:-----------------------:|
+| ![](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/Dark.png) | ![](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/Lighter.png) | 
+
 
 <br/>
 
-**Designer:** Michael K. Avanessian
+**Designer:&nbsp;&nbsp;** Michael K. Avanessian
 
-***Special Thanks:** "eyhn" from https://github.com/EYHN/vscode-vibrancy (for Vibrancy and custom CSS support)
+**Special Thanks To:&nbsp;&nbsp;** *"eyhn"* from Github:&nbsp;[EYHN/vscode-vibrancy](https://github.com/EYHN/vscode-vibrancy) *(for Vibrancy and custom CSS support)* ⭐

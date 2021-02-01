@@ -1,29 +1,18 @@
 var vscode = require('vscode');
 var fs = require('mz/fs');
+var fsExtra = require('fs-extra');
 var path = require('path');
 var lockPath = path.join(__dirname, '../firstload.lock');
 
-const i18nMessages = {
-	'en': JSON.parse(fs.readFileSync(path.join(__dirname, 'extension.nls.json')))
-};
-const defaultLocale = 'en';
-const locale = (vscode.env.language || defaultLocale).toLowerCase();
-const localize = (info) => {
-	if (locale in i18nMessages && info in i18nMessages[locale]) {
-		return i18nMessages[locale][info]
-	} else {
-		return i18nMessages[defaultLocale][info]
-	}
-}
+/**
+ * @type {(info: string) => string}
+ */
+const localize = require('./i18n');
 
-let os = 'macos';
-if (/^win/.test(process.platform)) {
-	if (require('os').release().split(".").map(Number)[0] === 10) {
-		os = 'win10';
-	} else {
-		os = 'win7';
-	}
-}
+/**
+ * @type {'unknown' | 'win10' | 'macos'}
+ */
+const os = require('./platform');
 
 var themeStylePaths = {
 	'Dark': '../themes/Dark.css',
@@ -42,7 +31,6 @@ function getCurrentTheme(config) {
 }
 
 async function changeTerminalRendererType() {
-	// This is a hacky way to display the restart prompt
 	let v = vscode.workspace.getConfiguration().inspect("terminal.integrated.rendererType");
 	if (v !== undefined) {
 		if (!v.globalValue) {
@@ -52,6 +40,7 @@ async function changeTerminalRendererType() {
 }
 
 async function promptRestart() {
+	// This is a hacky way to display the restart prompt
 	let v = vscode.workspace.getConfiguration().inspect("window.titleBarStyle");
 	if (v !== undefined) {
 		let value = vscode.workspace.getConfiguration().get("window.titleBarStyle");
@@ -78,37 +67,26 @@ async function checkColorTheme() {
 
 function deepEqual(obj1, obj2) {
 
-	if(obj1 === obj2) // it's just the same object. No need to compare.
-			return true;
+	if (obj1 === obj2) // it's just the same object. No need to compare.
+		return true;
 
-	if(isPrimitive(obj1) && isPrimitive(obj2)) // compare primitives
-			return obj1 === obj2;
+	if (isPrimitive(obj1) && isPrimitive(obj2)) // compare primitives
+		return obj1 === obj2;
 
-	if(Object.keys(obj1).length !== Object.keys(obj2).length)
-			return false;
+	if (Object.keys(obj1).length !== Object.keys(obj2).length)
+		return false;
 
 	// compare objects with same number of keys
-	for(let key in obj1)
-	{
-			if(!(key in obj2)) return false; //other object doesn't have this prop
-			if(!deepEqual(obj1[key], obj2[key])) return false;
+	for (let key in obj1) {
+		if (!(key in obj2)) return false; //other object doesn't have this prop
+		if (!deepEqual(obj1[key], obj2[key])) return false;
 	}
 
 	return true;
 }
 
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
-
 //check if value is primitive
-function isPrimitive(obj)
-{
+function isPrimitive(obj) {
 	return (obj !== Object(obj));
 }
 
@@ -122,141 +100,50 @@ function isFirstload() {
 }
 
 function lockFirstload() {
-	fs.writeFileSync(lockPath, '', () => {});
-}
-
-function injectHTML(config, currentTheme, themeConfig) {
-	var type = config.type;
-	if (type === 'auto') {
-		type = themeConfig.type[os];
-	}
-
-	let opacity = config.opacity;
-
-	if (opacity < 0) {
-		opacity = themeConfig.opacity[os]
-	}
-
-	if (os === 'win10') {
-		opacity = 0;
-	}
-
-	const backgroundRGB = hexToRgb(themeConfig.background);
-
-	const HTML = [
-		`
-		<style>
-			html {
-				background: rgba(${backgroundRGB.r},${backgroundRGB.g},${backgroundRGB.b},${opacity}) !important;
-			}
-		</style>
-		`,
-		...config.imports.map(function (x) {
-			if (!x) return;
-			if (typeof x === 'string') {
-				x = x.replace('%theme-style%', path.join(__dirname, themeStylePaths[currentTheme]));
-				x = x.replace('$theme-style$', path.join(__dirname, themeStylePaths[currentTheme]));
-				x = new URL(x, 'file://').href;
-
-				if (!x.startsWith('file://')) {
-					x = 'file://' + x;
-				}
-				
-				if (/^.*\.js$/.test(x)) return '<script src="' + x + '"></script>';
-				if (/^.*\.css$/.test(x)) return '<link rel="stylesheet" href="' + x + '"/>';
-			}
-		})
-	]
-
-	return HTML.join('')
-}
-
-const macosType = [
-	"appearance-based",
-	"light", 
-	"dark", 
-	"titlebar", 
-	"selection", 
-	"menu", 
-	"popover", 
-	"sidebar", 
-	"medium-light", 
-	"ultra-dark"
-];
-
-const windowsType = [
-	"dwm",
-	"acrylic"
-];
-
-function injectJS(config, currentTheme, themeConfig) {
-	var type = config.type;
-	if (type !== 'auto') {
-		if (os === 'win10' || os === 'win7' && !windowsType.includes(type)) type = 'auto';
-		if (os === 'macos' && !macosType.includes(type)) type = 'auto';
-	}
-	if (type === 'auto') {
-		type = themeConfig.type[os];
-	}
-
-	let opacity = config.opacity;
-
-	if (opacity < 0) {
-		opacity = themeConfig.opacity[os]
-	}
-	
-	return `
-	const electron = require('electron');
-
-  electron.app.on('browser-window-created', (event, window) => {
-    window.webContents.on('dom-ready', () => {
-      window.setBackgroundColor('#00000000');
-
-      ${os !== 'macos' ? 
-				`require("child_process")
-					.spawn(${JSON.stringify(__dirname + '\\blur-cli.exe')}, [new Uint32Array(window.getNativeWindowHandle().buffer)[0], '--type', ${JSON.stringify(type)}, '--enable', 'true', '--color', '${themeConfig.background}', '--opacity', ${JSON.stringify(opacity)}]);` :
-				`window.setVibrancy(${JSON.stringify(type)});`
-			}
-			
-      // hack
-      const width = window.getBounds().width;
-      window.setBounds({
-          width: width + 1,
-      });
-      window.setBounds({
-          width,
-      });
-
-      window.webContents.executeJavaScript(${JSON.stringify("document.body.innerHTML += " + JSON.stringify(injectHTML(config, currentTheme, themeConfig)))})
-    });
-  })
-	`
+	fs.writeFileSync(lockPath, '', () => { });
 }
 
 function activate(context) {
 	console.log('vscode-vibrancy is active!');
 
-	process.on('uncaughtException', function (err) {
-		if (/ENOENT|EACCES|EPERM/.test(err.code)) {
-			vscode.window.showInformationMessage(localize('messages.admin'));
-			return;
-		}
-	});
-
 	var isWin = /^win/.test(process.platform);
 	var appDir = path.dirname(require.main.filename);
 
-	var HTMLFile = appDir + (isWin ? '\\vs\\code\\electron-browser\\workbench\\workbench.html' : '/vs/code/electron-browser/workbench/workbench.html');
-	var JSFile = appDir + (isWin ? '\\main.js' : '/main.js');
+	var HTMLFile = appDir + '/vs/code/electron-browser/workbench/workbench.html';
+	var JSFile = appDir + '/main.js';
+
+	var runtimeVersion = 'v3';
+	var runtimeDir = appDir + '/vscode-vibrancy-runtime-' + runtimeVersion;
+
+	async function installRuntime() {
+		if (fs.existsSync(runtimeDir)) return;
+
+		await fs.mkdir(runtimeDir);
+		await fsExtra.copy(path.resolve(__dirname, '../runtime'), path.resolve(runtimeDir));
+	}
 
 	async function installJS() {
 		const config = vscode.workspace.getConfiguration("vscode_vibrancy");
 		const currentTheme = getCurrentTheme(config);
-		const themeConfig = require(path.join(__dirname, themeConfigPaths[currentTheme]));
+		const themeConfig = require(path.resolve(__dirname, themeConfigPaths[currentTheme]));
+		const themeCSS = await fs.readFile(path.join(__dirname, themeStylePaths[currentTheme]), 'utf-8');
 
 		const JS = await fs.readFile(JSFile, 'utf-8');
+
+		const injectData = {
+			os: os,
+			config: config,
+			theme: themeConfig,
+			themeCSS: themeCSS
+		}
+
+		const base = __filename;
+
 		const newJS = JS.replace(/\/\* !! VSCODE-VIBRANCY-START !! \*\/[\s\S]*?\/\* !! VSCODE-VIBRANCY-END !! \*\//, '')
-			+ '\n/* !! VSCODE-VIBRANCY-START !! */\n(function(){' + injectJS(config, currentTheme, themeConfig) + '})()\n/* !! VSCODE-VIBRANCY-END !! */\n';
+			+ '\n/* !! VSCODE-VIBRANCY-START !! */\n;(function(){\n'
+			+ `if (!require(\'fs\').existsSync(${JSON.stringify(base)})) return;\n`
+			+ `global.vscode_vibrancy_plugin = ${JSON.stringify(injectData)}; try{ require(${JSON.stringify(runtimeDir)}); } catch (err) {console.error(err)}\n`
+			+ '})()\n/* !! VSCODE-VIBRANCY-END !! */';
 		await fs.writeFile(JSFile, newJS, 'utf-8');
 	}
 
@@ -282,7 +169,7 @@ function activate(context) {
 	}
 
 	function enabledRestart() {
-		vscode.window.showInformationMessage(localize('messages.enabled'), { title: localize('messages.reloadIde') })
+		vscode.window.showInformationMessage(localize('messages.enabled'), { title: localize('messages.restartIde') })
 			.then(function (msg) {
 				msg && promptRestart();
 			});
@@ -297,37 +184,50 @@ function activate(context) {
 
 	// ####  main commands ######################################################
 
-	async function Install(autoreload) {
-		try {
-			await fs.stat(JSFile);
-			await changeTerminalRendererType()
-		} catch (error) {
-			vscode.window.showInformationMessage(localize('messages.smthingwrong') + error);
-			throw error;
+	async function Install() {
+
+		if (os === 'unknown') {
+			vscode.window.showInformationMessage(localize('messages.unsupported'));
+			throw new Error('unsupported');
 		}
 
 		try {
+			await fs.stat(JSFile);
+
+			await installRuntime();
 			await installJS();
+			await changeTerminalRendererType();
 		} catch (error) {
-			vscode.window.showInformationMessage(localize('messages.admin'));
+			if (error && (error.code === 'EPERM' || error.code === 'EACCES')) {
+				vscode.window.showInformationMessage(localize('messages.admin') + error);
+			}
+			else {
+				vscode.window.showInformationMessage(localize('messages.smthingwrong') + error);
+			}
 			throw error;
 		}
 	}
 
 	async function Uninstall() {
 		try {
-			await fs.stat(JSFile);
+			// uninstall old version
 			await fs.stat(HTMLFile);
-		} catch(error) {
-			vscode.window.showInformationMessage(localize('messages.smthingwrong') + error);
-			throw error;
-		}
-		
-		try {
 			await uninstallHTML();
+		} finally {
+
+		}
+
+		try {
+			await fs.stat(JSFile);
+			
 			await uninstallJS();
-		} catch(error) {
-			vscode.window.showInformationMessage(localize('messages.admin'));
+		} catch (error) {
+			if (error && (error.code === 'EPERM' || error.code === 'EACCES')) {
+				vscode.window.showInformationMessage(localize('messages.admin') + error);
+			}
+			else {
+				vscode.window.showInformationMessage(localize('messages.smthingwrong') + error);
+			}
 			throw error;
 		}
 	}
@@ -379,7 +279,7 @@ function activate(context) {
 						if (newConfig.theme !== vscode.workspace.getConfiguration("vscode_vibrancy")) {
 							await checkColorTheme();
 						}
-						promptRestart();
+						enabledRestart();
 					}
 				});
 			lockFirstload();
