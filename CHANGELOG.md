@@ -1,5 +1,6 @@
 # Changes
 
+* 0.3.0 - Fine tuned text colors
 * 0.2.9 - Fixed [Vibrancy blur mouse dragging lag issue](https://github.com/EYHN/vscode-vibrancy/discussions/80)
 * 0.2.8 - Fixed sidebar "dirty circle" + "close" icons; as well as pencil icon
 * 0.2.7 - Fixed tab icons for compatibilty with VSCode ver. 1.51.1 and higher
