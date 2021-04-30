@@ -1,5 +1,6 @@
 # Changes
 
+* 0.3.2 - Changed terminal ansi text colors to original retro colors
 * 0.3.1 - Fix: compatibility issue with vscode 1.53.0
 * 0.3.0 - Fine tuned text colors
 * 0.2.9 - Fixed [Vibrancy blur mouse dragging lag issue](https://github.com/EYHN/vscode-vibrancy/discussions/80)
