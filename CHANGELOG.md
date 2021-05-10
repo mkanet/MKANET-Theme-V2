@@ -1,5 +1,6 @@
 # Changes
 
+* 0.3.3 - Fix: compatibility issues with vscode 1.56.0.  Changed base theme to from 'vs-dark' to 'vs'
 * 0.3.2 - Changed terminal ansi text colors to original retro colors
 * 0.3.1 - Fix: compatibility issue with vscode 1.53.0
 * 0.3.0 - Fine tuned text colors

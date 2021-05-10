@@ -31,10 +31,10 @@ function getCurrentTheme(config) {
 }
 
 async function changeTerminalRendererType() {
-	let v = vscode.workspace.getConfiguration().inspect("terminal.integrated.rendererType");
+	let v = vscode.workspace.getConfiguration().inspect("terminal.integrated.gpuAcceleration");
 	if (v !== undefined) {
 		if (!v.globalValue) {
-			await vscode.workspace.getConfiguration().update("terminal.integrated.rendererType", "dom", vscode.ConfigurationTarget.Global);
+			await vscode.workspace.getConfiguration().update("terminal.integrated.gpuAcceleration", "off", vscode.ConfigurationTarget.Global);
 		}
 	}
 }

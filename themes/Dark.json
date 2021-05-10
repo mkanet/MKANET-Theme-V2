@@ -6,9 +6,9 @@
   },
   "background": "1e1e1e",
   "opacity": {
-    "win7": 0.2,
-    "win10": 0.2,
-    "macos": 0.2
+    "win7": 0.000001,
+    "win10": 0.000001,
+    "macos": 0.000001
   },
   "colorTheme": "MKANET V2"
 }
