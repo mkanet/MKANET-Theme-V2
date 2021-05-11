@@ -4,6 +4,12 @@ var fsExtra = require('fs-extra');
 var path = require('path');
 var lockPath = path.join(__dirname, '../firstload.lock');
 
+const crypto = require("crypto");
+const appDir = path.dirname(require.main.filename);
+const rootDir = path.join(appDir, "..");
+const productFile = path.join(rootDir, "product.json");
+const origFile = `${productFile}.orig.${vscode.version}`;
+
 /**
  * @type {(info: string) => string}
  */
@@ -196,6 +202,50 @@ function activate(context) {
 			});
 	}
 
+	function apply() {
+		const product = require(productFile)
+		let changed = false
+		for (const [filePath, curChecksum] of Object.entries(product.checksums)) {
+			const checksum = computeChecksum(path.join(appDir, ...filePath.split('/')))
+			if (checksum !== curChecksum) {
+				product.checksums[filePath] = checksum
+				changed = true
+			}
+		}
+		if (changed) {
+			const json = JSON.stringify(product, null, '\t')
+			try {
+				if (!fs.existsSync(origFile)) {
+					fs.renameSync(productFile, origFile)
+				}
+				fs.writeFileSync(productFile, json, { encoding: 'utf8' })
+			} catch (err) {
+				console.error(err)
+			}
+		}
+		cleanupOrigFiles();
+	}
+
+	function computeChecksum(file) {
+		var contents = fs.readFileSync(file)
+		return crypto
+			.createHash('md5')
+			.update(contents)
+			.digest('base64')
+			.replace(/=+$/, '')
+	}
+
+	function cleanupOrigFiles() {
+		// Remove all old backup files that aren't related to the current version
+		// of VSCode anymore.
+		const oldOrigFiles = fs.readdirSync(rootDir)
+			.filter(file => /\.orig\./.test(file))
+			.filter(file => !file.endsWith(vscode.version))
+		for (const file of oldOrigFiles) {
+			fs.unlinkSync(path.join(rootDir, file))
+		}
+	}
+
 	// ####  main commands ######################################################
 
 	async function Install() {
@@ -213,6 +263,7 @@ function activate(context) {
 			await installJS();
 			await installHTML();
 			await changeTerminalRendererType();
+			apply();
 		} catch (error) {
 			if (error && (error.code === 'EPERM' || error.code === 'EACCES')) {
 				vscode.window.showInformationMessage(localize('messages.admin') + error);
