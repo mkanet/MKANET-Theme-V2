@@ -1,6 +1,6 @@
 # **MKANET V2 - The ultimate gray color theme**
 
-I decided to create my own gray color theme from scratch to avoid headaches I got from traditional dark and light-colored themes.  I spent a lot of time choosing precise colors for syntax coloring and the Sidebar colors and customizing UI components.
+I decided to create my own gray color theme from scratch to avoid headaches I got from traditional MKANET and light-colored themes.  I spent a lot of time choosing precise colors for syntax coloring and the Sidebar colors and customizing UI components.
 
 Below, are the bonus features included with this theme:
 <br/>
@@ -40,15 +40,17 @@ MacOS ✔
 ## **Available Vibrancy themes:**
 
 * **Dark** &nbsp;*(default)*
-* **Lighter**
+* **Darker**
 
-|        Dark      |    Lighter   |
+|        Dark      |    Darker   |
 |:------------------------:|:-----------------------:|
-| ![](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/Dark.png) | ![](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/Lighter.png) | 
+| ![](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/Dark.png) | ![](https://github.com/mkanet/MKANET-Theme-V2/raw/master/./screenshots/Darker.png) | 
 
 
 <br/>
 
 **Designer:&nbsp;&nbsp;** Michael K. Avanessian
 
-**Special Thanks To:&nbsp;&nbsp;** *"eyhn"* from Github:&nbsp;[EYHN/vscode-vibrancy](https://github.com/EYHN/vscode-vibrancy) *(for Vibrancy and custom CSS support)* ⭐
+**Special Thanks To:&nbsp;&nbsp;** *"illixion"* from Github:&nbsp;[ILLIXION/vscode-vibrancy-continued](https://github.com/ILLIXION/vscode-vibrancy-continued) *(for fixing original Vibrancy Extension "Mouse Lag" and "Flashing" bux fixes in VSCode >1.56.2)* ⭐
+
+**Special Thanks To:&nbsp;&nbsp;** *"eyhn"* from Github:&nbsp;[EYHN/vscode-vibrancy](https://github.com/EYHN/vscode-vibrancy) *(for original Vibrancy and custom CSS code)* ⭐
