@@ -1,0 +1,13 @@
+{
+  "type": {
+    "win7": "dwm",
+    "win10": "acrylic",
+    "macos": "ultra-dark"
+  },
+  "background": "1e1e1e",
+  "opacity": {
+    "win10": 0.0,
+    "macos": 0.3
+  },
+  "colorTheme": "MKANET V2"
+}
