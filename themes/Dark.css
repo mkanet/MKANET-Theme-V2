@@ -1,12 +1,16 @@
 
-/* Titlebar & misc *********************************************/
-.monaco-workbench, .monaco-workbench .titlebar, .monaco-workbench .monaco-list-rows, body, .editor-group-container> .tabs {
+.monaco-workbench.fullscreen {
+	background-color: #202020 !important;
+}
+
+/* Titlebar & Activitybar & misc ********************************/
+.monaco-workbench, .monaco-workbench .titlebar, .monaco-workbench .activitybar, .monaco-workbench .monaco-list-rows, body, .editor-group-container> .tabs {
   background: transparent !important;
 }
 
-/* Activitybar & Sidebar #2 ************************************/
-.monaco-workbench .activitybar, .monaco-workbench .sidebar, .monaco-workbench .part.sidebar {
-  background-color: rgba(45, 45, 45, 0.2) !important;
+/* Sidebar *****************************************************/
+.monaco-workbench .sidebar, .monaco-workbench .part.sidebar {
+  background-color: rgba(45, 45, 45, 0.1) !important;
 }
 
 /* Modify breadcrumb font better visibility on Windows OS ******/

@@ -1,5 +1,6 @@
 # Changes
 
+* 0.3.6 - Minor color adjustments to Dark & Darker themes
 * 0.3.5 - Fix: compatibility issues with vscode >1.56.2
 * 0.3.4 - Fix: Avoid getting "Your Code installation appears to be corrupt. Please reinstall." message.
 * 0.3.3 - Fix: compatibility issues with vscode 1.56.0.  Changed base theme to from 'vs-dark' to 'vs'

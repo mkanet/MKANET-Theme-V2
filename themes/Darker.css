@@ -14,7 +14,7 @@
 /* Darker Main area ********************************************/
 .monaco-workbench .part>.content, .monaco-workbench .editor>.content>.one-editor-silo.editor-one, .monaco-workbench .part>.title, .monaco-workbench, .monaco-workbench .part, body {
   background: transparent !important;
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Darker Panel area *******************************************/
@@ -22,14 +22,14 @@
   background-color: transparent !important;
 }
 
-/* Activitybar & Sidebar #2 ************************************/
+/* Activitybar & Sidebar ***************************************/
 .monaco-workbench .activitybar, .monaco-workbench .sidebar, .monaco-workbench .part.sidebar {
   background-color: rgba(45, 45, 45, 0) !important;
 }
 
 /* Statusbar ***************************************************/
 .monaco-workbench .part.statusbar>.left-items, .monaco-workbench .part.statusbar>.right-items {
-  background-color: rgba(53, 53, 53, 0.2) !important;
+  background-color: rgba(53, 53, 53, 0.15) !important;
 }
 
 

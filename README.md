@@ -51,6 +51,6 @@ MacOS ✔
 
 **Designer:&nbsp;&nbsp;** Michael K. Avanessian
 
-**Special Thanks To:&nbsp;&nbsp;** *"illixion"* from Github:&nbsp;[ILLIXION/vscode-vibrancy-continued](https://github.com/ILLIXION/vscode-vibrancy-continued) *(for fixing original Vibrancy Extension "Mouse Lag" and "Flashing" bux fixes in VSCode >1.56.2)* ⭐
+**Special Thanks To:&nbsp;&nbsp;** *"illixion"* from Github:&nbsp;[ILLIXION/vscode-vibrancy-continued](https://github.com/ILLIXION/vscode-vibrancy-continued) *(for fixing original Vibrancy Extension "Mouse lag" and "Flashing" bux fixes in VSCode >1.56.2)* ⭐
 
 **Special Thanks To:&nbsp;&nbsp;** *"eyhn"* from Github:&nbsp;[EYHN/vscode-vibrancy](https://github.com/EYHN/vscode-vibrancy) *(for original Vibrancy and custom CSS code)* ⭐
