@@ -40,7 +40,7 @@
 }
 
 .monaco-workbench .notebookOverlay.notebook-editor .codicon[class*=codicon-] {
-  color: rgb(142, 85, 11) !important;
+  color: rgb(79, 48, 7) !important;
 }
 
 .monaco-editor .ced-interactiveInputDecoration-1565bf0c-4.ced-interactiveInputDecoration-4::after {
@@ -61,7 +61,22 @@
 /***************************************************************/
 
 
+/* GitHub Copilot Extension ************************************/
+.interactive-item-container .monaco-toolbar .codicon {
+  color: rgb(65, 65, 65) !important;
+  opacity: .95 !important;
+}
+.monaco-action-bar .action-item.disabled .action-label, .monaco-action-bar .action-item.disabled .action-label:before, .monaco-action-bar .action-item.disabled .action-label:hover {
+  color: rgb(65, 65, 65) !important;
+  opacity: .95 !important;
+}
+
+
 /* Custom icons ************************************************/
+.monaco-workbench .codicon {
+    color: var(--vscode-icon-background);
+}
+
 .monaco-editor.vs .margin-view-overlays .cldr.codicon.codicon-folding-expanded:before {
   content: "";
 }

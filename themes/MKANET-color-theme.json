@@ -349,7 +349,7 @@
         "focusBorder": "#0b0049",
         "badge.background": "#0a85d8",
         "badge.foreground": "#DFDFDF",
-        "breadcrumb.background": "#A7A7A7",
+        "breadcrumb.background": "#A5A5A5",
         "breadcrumb.foreground": "#000000",
         "breadcrumb.focusForeground": "#0046d2",
         "breadcrumb.activeSelectionForeground": "#003d83",
